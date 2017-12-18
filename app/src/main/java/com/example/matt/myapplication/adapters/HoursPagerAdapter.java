@@ -37,7 +37,8 @@ public class HoursPagerAdapter extends FragmentStatePagerAdapter
     }
 
     @Override
-    public int getCount() {
+    public int getCount()
+    {
         return HoursCollection.GetInstance().getHours().size();
     }
 }

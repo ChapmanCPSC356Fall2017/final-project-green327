@@ -28,13 +28,6 @@ public class HoursCollection
     private HoursCollection()
     {
         this.hours = new ArrayList<>();
-        HoursModel hours1 = new HoursModel();
-        hours1.setHours("1pm - 2pm");
-        hours1.setEmployee("Matt");
-        hours1.setDate("15");
-        hours1.setNumber("714-777-7777");
-        this.hours.add(hours1);
-
         HoursModel hours2 = new HoursModel();
         hours2.setHours("3pm - 4pm");
         hours2.setEmployee("Matt");
@@ -76,6 +69,13 @@ public class HoursCollection
         hours7.setDate("14");
         hours7.setNumber("714-777-7777");
         this.hours.add(hours7);
+
+        HoursModel hours1 = new HoursModel();
+        hours1.setHours("1pm - 2pm");
+        hours1.setEmployee("Matt");
+        hours1.setDate("9");
+        hours1.setNumber("714-777-7777");
+        this.hours.add(hours1);
     }
 
     //returns list to be accessed by other methods
@@ -106,10 +106,5 @@ public class HoursCollection
             }
         }
         return 0;
-    }
-
-    public void remove(int id)
-    {
-        this.hours.remove(id);
     }
 }

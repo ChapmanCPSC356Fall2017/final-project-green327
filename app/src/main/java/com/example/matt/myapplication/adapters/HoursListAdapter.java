@@ -23,10 +23,12 @@ import com.example.matt.myapplication.activities.HoursPager;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
+
 //creating list view and handling user inputs
 public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.HoursViewHolder>
 {
-
+    private int index = 0;
     @Override
     public HoursViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
@@ -40,17 +42,24 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
     @Override
     public void onBindViewHolder(HoursViewHolder holder, int position)
     {
-        HoursModel hours = HoursCollection.GetInstance().getHours().get(position);
-        if(hours.getDate().equals(selectedDate.GetInstance().getDate()))
+        for(int loop = 0 + index; loop <= HoursCollection.GetInstance().getHours().size(); ++loop)
         {
-            holder.setup(hours);
+            System.out.println("Loop: " + loop);
+            HoursModel hours = HoursCollection.GetInstance().getHours().get(loop);
+            if(hours.getDate().equals(selectedDate.GetInstance().getDate()))
+            {
+                holder.setup(hours);
+                index = loop + 1;
+                System.out.println("Index: " + index);
+                break;
+            }
         }
     }
 
     @Override
     public int getItemCount()
     {
-        return HoursCollection.GetInstance().getHours().size();
+        return 2;
     }
 
 
@@ -77,7 +86,6 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
         public void setup(HoursModel hours)
         {
             this.hours = hours;
-            System.out.println(hours.getEmployee());
             this.titleTextView.setText(hours.getEmployee());
             this.hoursTestView.setText(hours.getHours());
         }

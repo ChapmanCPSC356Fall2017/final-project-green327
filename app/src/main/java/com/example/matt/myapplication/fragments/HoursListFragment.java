@@ -18,7 +18,6 @@ import com.example.matt.myapplication.adapters.HoursListAdapter;
 
 public class HoursListFragment extends Fragment
 {
-    String date;
     private HoursListAdapter adapter;
 
     @Override
