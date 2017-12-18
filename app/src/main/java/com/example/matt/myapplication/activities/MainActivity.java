@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.matt.myapplication.HoursCollection;
 import com.example.matt.myapplication.R;
+import com.example.matt.myapplication.models.selectedDate;
 
 import static android.view.View.VISIBLE;
 
@@ -33,14 +35,13 @@ public class MainActivity extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(userName.getText().toString().equals("user") && password.getText().toString().equals("password"))
-                {
-                    Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
-                    startActivity(intent);
-                }
-                else
-                {
-                    wrong.setVisibility(VISIBLE);
+                for(int i = 0; i < HoursCollection.GetInstance().getHours().size(); ++i) {
+                    if (userName.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getEmployee()) && password.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getNumber())) {
+                        Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                        startActivity(intent);
+                    } else {
+                        wrong.setVisibility(VISIBLE);
+                    }
                 }
             }
         });

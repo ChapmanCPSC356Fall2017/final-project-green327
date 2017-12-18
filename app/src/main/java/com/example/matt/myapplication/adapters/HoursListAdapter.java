@@ -6,24 +6,16 @@ package com.example.matt.myapplication.adapters;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.TextView;
 
 import com.example.matt.myapplication.HoursCollection;
-import com.example.matt.myapplication.activities.CalendarActivity;
-import com.example.matt.myapplication.fragments.HoursListFragment;
 import com.example.matt.myapplication.models.HoursModel;
 import com.example.matt.myapplication.models.selectedDate;
 import com.example.matt.myapplication.R;
 import com.example.matt.myapplication.activities.HoursPager;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 //creating list view and handling user inputs
 public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.HoursViewHolder>
@@ -38,7 +30,6 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
         return new HoursViewHolder(v);
     }
 
-    //TODO refractor position of new hours list printed
     @Override
     public void onBindViewHolder(HoursViewHolder holder, int position)
     {
@@ -59,7 +50,7 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
     @Override
     public int getItemCount()
     {
-        return 2;
+        return HoursCollection.GetInstance().checkDateExist(selectedDate.GetInstance().getDateInt());
     }
 
 

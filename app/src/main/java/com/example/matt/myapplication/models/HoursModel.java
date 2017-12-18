@@ -29,6 +29,11 @@ public class HoursModel
         return day;
     }
 
+    public int getDateInt()
+    {
+        return Integer.parseInt(day);
+    }
+
     public void setDate(String day)
     {
         this.day = day;

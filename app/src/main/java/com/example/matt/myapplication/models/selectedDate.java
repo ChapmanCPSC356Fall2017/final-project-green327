@@ -32,5 +32,10 @@ public class selectedDate {
     {
         return date;
     }
+
+    public int getDateInt()
+    {
+        return Integer.parseInt(date);
+    }
 }
 

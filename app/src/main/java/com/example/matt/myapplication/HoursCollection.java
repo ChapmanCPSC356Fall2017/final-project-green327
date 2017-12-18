@@ -1,5 +1,6 @@
 package com.example.matt.myapplication;
 
+import com.example.matt.myapplication.fragments.HoursListFragment;
 import com.example.matt.myapplication.models.HoursModel;
 
 import java.util.ArrayList;
@@ -95,6 +96,21 @@ public class HoursCollection
         }
 
         return null;
+    }
+
+    public int checkDateExist(int d)
+    {
+        int count = 0;
+        for(HoursModel hours : this.hours)
+        {
+            if (hours.getDateInt() == d)
+            {
+                count++;
+            }
+            else {
+            }
+        }
+        return count;
     }
 
     //returns position information for display changes
