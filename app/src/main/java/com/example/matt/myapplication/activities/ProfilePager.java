@@ -9,11 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.matt.myapplication.HoursCollection;
-import com.example.matt.myapplication.adapters.HoursPagerAdapter;
+import com.example.matt.myapplication.adapters.ProfilePagerAdapter;
 import com.example.matt.myapplication.R;
 
 //changing view from list to individual items
-public class HoursPager extends AppCompatActivity
+public class ProfilePager extends AppCompatActivity
 {
     public static final String EXTRA_HOURS_ID = "hours_id";
 
@@ -27,10 +27,10 @@ public class HoursPager extends AppCompatActivity
 
         this.hoursPager = findViewById(R.id.vp_hours);
 
-        HoursPagerAdapter adapter = new HoursPagerAdapter(getSupportFragmentManager());
+        ProfilePagerAdapter adapter = new ProfilePagerAdapter(getSupportFragmentManager());
         this.hoursPager.setAdapter(adapter);
 
-        String hoursId = getIntent().getStringExtra(HoursPager.EXTRA_HOURS_ID);
+        String hoursId = getIntent().getStringExtra(ProfilePager.EXTRA_HOURS_ID);
         int hoursIndex = HoursCollection.GetInstance().indexOf(hoursId);
 
         this.hoursPager.setCurrentItem(hoursIndex);

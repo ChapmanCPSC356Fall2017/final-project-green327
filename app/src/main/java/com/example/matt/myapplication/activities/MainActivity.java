@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.matt.myapplication.CalendarLoginInformation;
 import com.example.matt.myapplication.HoursCollection;
 import com.example.matt.myapplication.R;
-import com.example.matt.myapplication.models.selectedDate;
 
 import static android.view.View.VISIBLE;
 
@@ -32,14 +32,25 @@ public class MainActivity extends AppCompatActivity {
         this.password = findViewById(R.id.password);
         this.wrong = findViewById(R.id.tvWrong);
         this.log = findViewById(R.id.login);
+        System.out.println(CalendarLoginInformation.GetInstance().getHasLogin());
+        if(CalendarLoginInformation.GetInstance().getHasLogin())
+        {
+            Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+            startActivity(intent);
+        }
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 for(int i = 0; i < HoursCollection.GetInstance().getHours().size(); ++i) {
                     if (userName.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getEmployee()) && password.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getNumber())) {
+                        CalendarLoginInformation.GetInstance().setHasLogin(true);
+                        CalendarLoginInformation.GetInstance().setLogin(userName.getText().toString(), password.getText().toString());
                         Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
                         startActivity(intent);
-                    } else {
+                        break;
+                    }
+                    else
+                    {
                         wrong.setVisibility(VISIBLE);
                     }
                 }

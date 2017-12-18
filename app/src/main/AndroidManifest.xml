@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.matt.myapplication.activities.HoursPager"
+        <activity android:name="com.example.matt.myapplication.activities.ProfilePager"
         android:parentActivityName="com.example.matt.myapplication.activities.MainActivity">
     </activity>
         <activity android:name="com.example.matt.myapplication.activities.CalendarActivity"

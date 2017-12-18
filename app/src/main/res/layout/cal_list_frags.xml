@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -16,6 +17,14 @@
             android:firstDayOfWeek="2"
             android:maxDate="01/01/2019"
             android:minDate="01/01/2017" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:text="@string/log_out"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
     </FrameLayout>
 
     <FrameLayout

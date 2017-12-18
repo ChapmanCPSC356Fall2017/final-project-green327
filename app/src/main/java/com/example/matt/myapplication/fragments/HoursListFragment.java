@@ -36,4 +36,5 @@ public class HoursListFragment extends Fragment
 
         return v;
     }
+
 }

@@ -10,13 +10,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.matt.myapplication.HoursCollection;
-import com.example.matt.myapplication.fragments.HoursFragment;
+import com.example.matt.myapplication.fragments.ProfileViewFragment;
 import com.example.matt.myapplication.models.HoursModel;
 
 
-public class HoursPagerAdapter extends FragmentStatePagerAdapter
+public class ProfilePagerAdapter extends FragmentStatePagerAdapter
 {
-    public HoursPagerAdapter(FragmentManager fm)
+    public ProfilePagerAdapter(FragmentManager fm)
     {
         super(fm);
     }
@@ -26,10 +26,10 @@ public class HoursPagerAdapter extends FragmentStatePagerAdapter
     {
         HoursModel hours = HoursCollection.GetInstance().getHours().get(position);
 
-        HoursFragment frag = new HoursFragment();
+        ProfileViewFragment frag = new ProfileViewFragment();
 
         Bundle args = new Bundle();
-        args.putString(HoursFragment.ARG_HOURS_ID, hours.getID());
+        args.putString(ProfileViewFragment.ARG_HOURS_ID, hours.getID());
 
         frag.setArguments(args);
 

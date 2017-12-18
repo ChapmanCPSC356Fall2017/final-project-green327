@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import com.example.matt.myapplication.HoursCollection;
 import com.example.matt.myapplication.models.HoursModel;
-import com.example.matt.myapplication.models.selectedDate;
+import com.example.matt.myapplication.CalendarLoginInformation;
 import com.example.matt.myapplication.R;
-import com.example.matt.myapplication.activities.HoursPager;
+import com.example.matt.myapplication.activities.ProfilePager;
 
 //creating list view and handling user inputs
 public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.HoursViewHolder>
@@ -37,7 +37,7 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
         {
             System.out.println("Loop: " + loop);
             HoursModel hours = HoursCollection.GetInstance().getHours().get(loop);
-            if(hours.getDate().equals(selectedDate.GetInstance().getDate()))
+            if(hours.getDate().equals(CalendarLoginInformation.GetInstance().getDate()))
             {
                 holder.setup(hours);
                 index = loop + 1;
@@ -50,7 +50,7 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
     @Override
     public int getItemCount()
     {
-        return HoursCollection.GetInstance().checkDateExist(selectedDate.GetInstance().getDateInt());
+        return HoursCollection.GetInstance().checkDateExist(CalendarLoginInformation.GetInstance().getDateInt());
     }
 
 
@@ -85,8 +85,8 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
         @Override
         public void onClick(View view)
         {
-            Intent hoursIntent = new Intent(view.getContext(), HoursPager.class);
-            hoursIntent.putExtra(HoursPager.EXTRA_HOURS_ID, this.hours.getID());
+            Intent hoursIntent = new Intent(view.getContext(), ProfilePager.class);
+            hoursIntent.putExtra(ProfilePager.EXTRA_HOURS_ID, this.hours.getID());
 
             view.getContext().startActivity(hoursIntent);
         }

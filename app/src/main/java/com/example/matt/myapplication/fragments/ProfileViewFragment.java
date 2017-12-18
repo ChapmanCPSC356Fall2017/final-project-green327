@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.matt.myapplication.CalendarLoginInformation;
 import com.example.matt.myapplication.HoursCollection;
 import com.example.matt.myapplication.R;
 import com.example.matt.myapplication.models.HoursModel;
@@ -23,7 +24,7 @@ import com.example.matt.myapplication.models.HoursModel;
 import static android.app.Activity.RESULT_OK;
 
 //on click fragment that appears when list is selected
-public class HoursFragment extends Fragment
+public class ProfileViewFragment extends Fragment
 {
     private TextView name;
     private TextView number;
@@ -41,7 +42,7 @@ public class HoursFragment extends Fragment
     {
         super.onCreate(savedInstanceState);
 
-        String hoursID = getArguments().getString(HoursFragment.ARG_HOURS_ID);
+        String hoursID = getArguments().getString(ProfileViewFragment.ARG_HOURS_ID);
         this.hours = HoursCollection.GetInstance().getHours(hoursID);
     }
 
@@ -61,8 +62,12 @@ public class HoursFragment extends Fragment
 
             @Override
             public void onClick(View view) {
-                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
+                String[] loginCheck = CalendarLoginInformation.GetInstance().getLogin();
+                    if (loginCheck[0].equals(hours.getEmployee()) && loginCheck[1].equals(hours.getNumber()))
+                    {
+                        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                        startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
+                    }
             }
 
         });
@@ -84,4 +89,6 @@ public class HoursFragment extends Fragment
             image.setImageURI(selectedImage);
         }
     }
+
+
 }
