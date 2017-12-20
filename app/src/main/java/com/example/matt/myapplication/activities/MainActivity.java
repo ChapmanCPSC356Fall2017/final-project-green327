@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 for(int i = 0; i < HoursCollection.GetInstance().getHours().size(); ++i) {
-                    if (userName.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getEmployee()) && password.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getNumber())) {
+                    if (userName.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getEmployee()) && password.getText().toString().equals(HoursCollection.GetInstance().getHours().get(i).getPassword())) {
                         CalendarLoginInformation.GetInstance().setHasLogin(true);
                         CalendarLoginInformation.GetInstance().setLogin(userName.getText().toString(), password.getText().toString());
                         Intent intent = new Intent(MainActivity.this, CalendarActivity.class);

@@ -33,6 +33,8 @@ public class ProfilePager extends AppCompatActivity
         String hoursId = getIntent().getStringExtra(ProfilePager.EXTRA_HOURS_ID);
         int hoursIndex = HoursCollection.GetInstance().indexOf(hoursId);
 
+        System.out.println(hoursIndex);
+
         this.hoursPager.setCurrentItem(hoursIndex);
     }
 }

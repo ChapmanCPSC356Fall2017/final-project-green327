@@ -4,6 +4,8 @@ package com.example.matt.myapplication.models;
  * Created by Matt on 12/16/2017.
  */
 
+import android.net.Uri;
+
 import java.util.UUID;
 
 public class HoursModel
@@ -13,6 +15,8 @@ public class HoursModel
     private String hours;
     private String employee;
     private String number;
+    private Uri profile;
+    private String password;
 
     public HoursModel()
     {
@@ -66,5 +70,25 @@ public class HoursModel
     public String getNumber()
     {
         return number;
+    }
+
+    public void setProfile(Uri p)
+    {
+        this.profile = p;
+    }
+
+    public Uri getProfile()
+    {
+        return this.profile;
+    }
+
+    public void setPassword(String pass)
+    {
+        this.password = pass;
+    }
+
+    public String getPassword()
+    {
+        return password;
     }
 }

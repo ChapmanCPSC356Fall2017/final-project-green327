@@ -7,6 +7,7 @@ package com.example.matt.myapplication.adapters;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.matt.myapplication.HoursCollection;
@@ -39,6 +40,7 @@ public class ProfilePagerAdapter extends FragmentStatePagerAdapter
     @Override
     public int getCount()
     {
+        System.out.println();
         return HoursCollection.GetInstance().getHours().size();
     }
 }

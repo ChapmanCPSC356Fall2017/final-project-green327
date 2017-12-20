@@ -5,6 +5,14 @@
     android:orientation="vertical"
     android:padding="15dp">
 
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:id="@+id/button"
+        android:text="@string/edit_profile"
+        android:textSize="10sp"
+        android:layout_gravity="end"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,9 +21,8 @@
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="127dp"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/profile_picture"
-            android:src="@mipmap/ic_launcher_foreground" />
+            android:layout_height="129dp"
+            android:contentDescription="@string/profile_picture" />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -24,18 +31,35 @@
         android:textSize="25sp"
         style="?android:listSeparatorTextViewStyle"/>
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_number"
+        android:id="@+id/et_number"
         android:textSize="25sp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:layout_gravity="center"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_pass"
+        android:textSize="25sp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_gravity="center"
+        android:inputType="textPassword"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_hours"
+        android:id="@+id/et_hours"
         android:textSize="25sp"
         android:layout_gravity="center"/>
+
 </LinearLayout>
 

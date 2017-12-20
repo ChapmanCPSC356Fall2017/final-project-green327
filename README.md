@@ -18,7 +18,7 @@ final-project-green327 created by GitHub Classroom
 <ul>
 <li>allow for multiple shifts for each employee, which can all be viewed in their profile</li>
 <li>define shifts through month and year as well</li>
-<li>permission definitions for who can edit picture for each individual employee</li>
+<li>DONE permission definitions for who can edit picture for each individual employee</li>
 <li>Randomly generate employees and their information</li>
 <li>look into having a manager option with can add schedules for people</li>
 <li>Use SQL as database for employees and shift management</li>

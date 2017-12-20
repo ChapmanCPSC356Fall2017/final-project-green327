@@ -35,13 +35,11 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
     {
         for(int loop = 0 + index; loop <= HoursCollection.GetInstance().getHours().size(); ++loop)
         {
-            System.out.println("Loop: " + loop);
             HoursModel hours = HoursCollection.GetInstance().getHours().get(loop);
             if(hours.getDate().equals(CalendarLoginInformation.GetInstance().getDate()))
             {
                 holder.setup(hours);
                 index = loop + 1;
-                System.out.println("Index: " + index);
                 break;
             }
         }
@@ -71,7 +69,7 @@ public class HoursListAdapter extends RecyclerView.Adapter<HoursListAdapter.Hour
 
             this.titleTextView = itemView.findViewById(R.id.tv_title);
 
-            this.hoursTestView = itemView.findViewById(R.id.tv_hours);
+            this.hoursTestView = itemView.findViewById(R.id.et_hours);
         }
 
         public void setup(HoursModel hours)
